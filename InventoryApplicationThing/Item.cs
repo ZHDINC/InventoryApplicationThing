@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InventoryApplicationThing
 {
-    class Item
+    public class Item
     {
         private string name;
         private decimal price;
@@ -95,6 +95,13 @@ namespace InventoryApplicationThing
                 char confirmation = char.Parse(Console.ReadLine());
                 if (confirmation == 'y' || confirmation == 'Y') break;
             }
+
+            PurchaseItem(quantityDesired);
+            
+        }
+
+        public void PurchaseItem(int quantityDesired)
+        {
             if(!(quantityDesired > ItemCount))
             {
                 ItemCount -= quantityDesired;
@@ -107,12 +114,13 @@ namespace InventoryApplicationThing
             }
         }
 
-        public void GetTransactions()
+        public List<Transaction> GetTransactions()
         {
             foreach(Transaction t in transactionLog)
             {
                 Console.WriteLine(t);
             }
+            return transactionLog;
         }
     }
 }

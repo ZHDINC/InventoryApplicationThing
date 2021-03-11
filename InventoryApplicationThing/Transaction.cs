@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InventoryApplicationThing
 {
-    class Transaction
+    public class Transaction
     {
         private DateTimeOffset dateTime;
         private string itemName;

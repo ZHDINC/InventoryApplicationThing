@@ -6,7 +6,7 @@ namespace InventoryApplicationThing
     {
         static void Main(string[] args)
         {
-            Item knickKnack = new Item("NVIDIA RTX 3080", 699.99M, 100);
+            Item knickKnack = new Item("Graphics Card 9147", 699.99M, 100);
             bool continueLoop = true;
             while(continueLoop)
             {
