@@ -33,5 +33,17 @@ namespace Inventory.UnitTests
             Assert.AreEqual(transactionList[1].ToString(), newItemTransactions[1].ToString());
             Assert.AreEqual(transactionList[2].ToString(), newItemTransactions[2].ToString());
         }
+
+        [TestMethod]
+        public void InventoryCountTracker()
+        {
+            Item newItem = new Item("Knick-Knack", 19.99M, 100);
+            newItem.PurchaseItem(11);
+            newItem.PurchaseItem(22);
+            newItem.PurchaseItem(33);
+            newItem.Restock(100);
+            newItem.Restock(50);
+            Assert.AreEqual(184, newItem.ItemCount);
+        }
     }
 }

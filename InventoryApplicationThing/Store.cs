@@ -20,11 +20,20 @@ namespace InventoryApplicationThing
             this.storeNumber = storeNumber;
         }
 
-        public void MakePurchase()
+        public void MakePurchase(string s)
         {
-            
+            itemList[s].PurchaseItem();
         }
 
+        public string ShowInventory()
+        {
+            string s = "";
+            foreach(var item in itemList)
+            {
+                s += $"{item.Value.Name} - ${item.Value.Price} - Quantity: {item.Value.ItemCount}\n";
+            }
+            return s;
+        }
 
         public void AddInventory(string name, Item item)
         {
